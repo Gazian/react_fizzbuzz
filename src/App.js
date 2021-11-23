@@ -5,10 +5,11 @@ function App() {
 
   let[number, setNumber] = useState(1);
   let[answer, setAnswer] = useState("");
+  let[choice, setChoice] = useState("")
 
   useEffect(() =>{
     gameLogic(number);
-  }, [number])
+  }, [number, choice])
 
 
   const handleInc = () => {
@@ -27,12 +28,27 @@ function App() {
     }
   }
 
+  const handleUserChoice = () => {
+    setChoice = 
+  }
+
+
+
 
   return (
     <>
     <button value={number} onClick={handleInc}>+</button>
     <h2>Number is: {number}</h2>
     <h2>Answer: {answer}</h2>
+
+    <label for="answers">Choose your answer:</label>
+
+    <select name="answers" id="answers">
+      <option value={number}>{number}</option>
+      <option value="fizz">fizz</option>
+      <option value="buzz">buzz</option>
+      <option value="fizzbuzz">fizzbuzz</option>
+    </select>
 
   </>
   );
